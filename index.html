@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>10 Standard Email Patterns</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="card" style="padding:10px;display:flex;align-items:center;gap:12px">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden>
+          <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-opacity="0.12"></rect>
+          <path d="M3 7l9 6 9-6" stroke="currentColor" stroke-opacity="0.12"></path>
+        </svg>
+        <div>
+          <h1>Standard  Patterns</h1>
+          <div class="small">Enter names and domain; get all common formats ready to copy.</div>
+        </div>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+      </div>
+    </header>
+
+    <section class="card">
+      <!-- Bulk Input -->
+      <div style="margin-bottom:12px;">
+        <label for="names">Multiple Names (one per line, format: First Last)</label>
+        <textarea id="names" placeholder="Ada Lovelace\nAlan Turing\nGrace Hopper" rows="5"></textarea>
+      </div>
+
+      <!-- Single Person Input -->
+      <form id="form" class="form-style" onsubmit="return false;">
+        <div>
+          <label for="first">First name</label>
+          <input id="first" type="text" placeholder="e.g. Ada" autocomplete="given-name" />
+        </div>
+        <div>
+          <label for="last">Last name</label>
+          <input id="last" type="text" placeholder="e.g. Lovelace" autocomplete="family-name" />
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div>
+            <label for="domain">Domain</label>
+            <div style="display:flex;gap:8px;align-items:center">
+              <input id="domain" type="text" placeholder="example.com" />
+            </div>
+          </div>
+          <div style="display:flex;gap:8px">
+            <button id="generate">Generate</button>
+            <button id="clear" type="button">Clear</button>
+          </div>
+        </div>
+      </form>
+
+      <div class="hint">Domain should be just "example.com". Inputs are normalized to lowercase and non-alphanumeric characters are removed.</div>
+
+      <!-- Bulk Actions Top -->
+      <div class="bulk-actions" id="bulk-actions-top" style="display:none;margin-top:10px;gap:8px;display:flex;">
+        <button id="copyAllTop" class="copy-btn">Copy All</button>
+        <button id="downloadCsvTop">Download CSV</button>
+      </div>
+
+      <!-- Results -->
+      <div class="results" id="results" aria-live="polite"></div>
+
+      <!-- Bulk Actions Bottom -->
+      <div class="bulk-actions" id="bulk-actions-bottom" style="display:none;margin-top:10px;gap:8px;display:flex;">
+        <button id="copyAllBottom" class="copy-btn">Copy All</button>
+        <button id="downloadCsvBottom">Download CSV</button>
+      </div>
+
+      <div class="footer">Patterns included: first.last, firstlast, f.last, first.l, flast, first_last, last.first, first-last, first, last</div>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
