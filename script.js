@@ -342,7 +342,7 @@
   [downloadCsvTop, downloadCsvBottom].forEach(btn=>btn.addEventListener('click',()=>downloadCsv()));
 
   // Prefill example
-  firstEl.value='Michael'; lastEl.value='Smith'; domainEl.value='example.com';
-  generate.click();
+ //  firstEl.value=''; lastEl.value=''; domainEl.value='';
+  //generate.click();
 
 })();
